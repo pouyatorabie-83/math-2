@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>ریاضی دوم – فصل ۱: عدد و رقم</title>
+<style>
+:root{color-scheme:light;--pink:#ec5c9a;--pk2:#ffe3ef;--lav:#8a63d2;--lv2:#eee6ff;--mint:#1fb89a;--mt2:#dcf8f1;--sun:#e8a600;--sn2:#fff4cc;--sky:#3d9be9;--sk2:#e1f1ff;--ink:#3a2a4d}
+*{box-sizing:border-box}
+body{margin:0;background:#fff6fb;color:var(--ink);font-family:Tahoma,"Segoe UI","Noto Naskh Arabic",sans-serif;font-size:18px;line-height:2}
+.top{background:linear-gradient(135deg,#ff8fc0,#b58cf0);color:#fff;text-align:center;padding:26px 16px 40px;border-radius:0 0 40px 40px}
+.top h1{margin:4px 0;font-size:30px;line-height:1.6}.top p{margin:0;font-size:16px}
+.stars{position:sticky;top:8px;z-index:5;margin:-22px auto 0;width:max-content;background:#fff;border:3px solid var(--sun);border-radius:99px;padding:0 18px;font-weight:700}
+.wrap{max-width:640px;margin:0 auto;padding:12px 16px}
+.step{background:#fff;border-radius:28px;padding:18px;margin:22px 0;border:4px solid var(--c);box-shadow:0 6px 0 var(--c)}
+.s1{--c:var(--pink);--bg:var(--pk2)}.s2{--c:var(--lav);--bg:var(--lv2)}.s3{--c:var(--mint);--bg:var(--mt2)}.s4{--c:var(--sun);--bg:var(--sn2)}.s5{--c:var(--sky);--bg:var(--sk2)}
+.badge{display:inline-block;background:var(--c);color:#fff;border-radius:99px;padding:0 16px;font-weight:700;line-height:34px}
+h2{margin:6px 0;font-size:24px;line-height:1.7}
+.say{background:var(--bg);border-radius:18px;padding:10px 14px;margin:10px 0}
+.big{font-size:30px;font-weight:700;text-align:center;direction:ltr;letter-spacing:2px;line-height:1.6}
+.em{font-size:28px;text-align:center;line-height:1.5;margin:6px 0;word-break:break-all}
+.lab{text-align:center;font-weight:700;font-size:16px}
+.blocks{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end;justify-content:center;margin:10px 0}
+.t{width:12px;height:44px;background:#c9b3f5;border:2px solid var(--lav);border-radius:5px}
+.u{width:12px;height:12px;background:#9ae6d3;border:2px solid var(--mint);border-radius:50%}
+.sq{width:18px;height:18px;border:2px solid var(--mint);border-radius:4px;background:#fff}
+.sq.x{background:#ffb3c7;border-color:var(--pink)}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.cols div{background:var(--bg);border-radius:16px;text-align:center;padding:6px 2px;border:2px solid var(--c)}
+.cols b{display:block;font-size:34px;color:var(--c);line-height:1.4}
+.tl{display:inline-block;position:relative;letter-spacing:4px;font-weight:700;margin:0 8px}
+.tl.k::after{content:"";position:absolute;left:-5px;right:-3px;top:52%;border-top:3px solid var(--pink);transform:rotate(-18deg)}
+.nl{display:flex;direction:ltr;justify-content:center;gap:0;margin:8px 0;overflow-x:auto}
+.nl span{min-width:34px;text-align:center;border-top:4px solid var(--c);font-weight:700;font-size:15px;position:relative;padding-top:6px}
+.nl span::before{content:"";position:absolute;top:-10px;left:50%;width:4px;height:12px;background:var(--c);transform:translateX(-50%)}
+.pr{margin-top:16px;border-top:3px dotted var(--c);padding-top:10px}
+.pr h3{margin:0 0 4px;font-size:20px;color:var(--c)}
+.q{margin:12px 0}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+button{font:inherit;font-weight:700;border:3px solid var(--c);background:#fff;color:var(--ink);border-radius:16px;padding:0 18px;line-height:44px;min-width:76px;cursor:pointer}
+button:active{transform:scale(.96)}
+button.ok{background:#b9f0dd;border-color:#18a37f}
+button.no{background:#ffd3d9;border-color:#e0556a}
+.fb{font-weight:700;min-height:30px}
+.end{text-align:center;background:var(--sn2);border:4px solid var(--sun);border-radius:28px;padding:16px;margin:22px 0;display:none}
+.end.show{display:block}
+</style>
+</head>
+<body>
+<div class="top">
+<div style="font-size:40px">🌸🧮🌸</div>
+<h1>فصل ۱: عدد و رقم</h1>
+<p>ریاضی دوم دبستان – پنج درس، پنج قدم تا قهرمانی</p>
+</div>
+<div class="stars">⭐ ستاره‌هایم: <span id="sc">۰</span> از <span id="tot"></span></div>
+
+<div class="wrap">
+
+<div class="step s1">
+<span class="badge">درس ۱</span>
+<h2>عدد و شمارش</h2>
+<div class="say">برای شمردن درست، سه کار می‌کنیم:<br>۱) چیزها را <b>به ترتیب</b> می‌شماریم.<br>۲) هر کدام را <b>فقط یک بار</b> می‌شماریم.<br>۳) <b>آخرین عددی</b> که گفتیم، تعداد است.</div>
+<div class="em">🌷🌷🌷🌷🌷🌷🌷</div>
+<div class="lab">۱، ۲، ۳، ۴، ۵، ۶، ۷ ← ۷ تا گل</div>
+<div class="say">برای شمردن راحت‌تر <b>چوب‌خط</b> می‌کشیم. هر ۵ تا را با یک خط مورب می‌بندیم:<br><div class="big"><span class="tl k">||||</span><span class="tl">||</span> = ۷</div></div>
+<div class="say">علامت‌ها: <b>&gt;</b> یعنی «بیشتر از»، <b>&lt;</b> یعنی «کمتر از». دهان علامت همیشه به طرف عدد بزرگ‌تر باز است. مثلاً ۸ &gt; ۵</div>
+<div class="pr"><h3>🎯 حالا تو حل کن</h3>
+<div class="q" data-a="1"><div>۱) چند گل داریم؟<div class="em">🌸🌸🌸🌸🌸🌸🌸🌸</div></div><div class="opts"><button>۷</button><button>۸</button><button>۹</button></div><div class="fb"></div></div>
+<div class="q" data-a="0"><div>۲) بین ۱۲ و ۹ کدام علامت درست است؟ ۱۲ ... ۹</div><div class="opts"><button>&gt;</button><button>&lt;</button><button>=</button></div><div class="fb"></div></div>
+</div>
+</div>
+
+<div class="step s2">
+<span class="badge">درس ۲</span>
+<h2>دسته‌های ده‌تایی و یکی</h2>
+<div class="say">وقتی تعداد زیاد است، <b>۱۰ تا ۱۰ تا</b> جدا می‌کنیم. هر دسته‌ی ده‌تایی یک نوار است و هر چیز تنها یک «یکی» است.</div>
+<div class="blocks"><div class="t"></div><div class="t"></div><div class="t"></div><div class="t"></div><span style="width:14px"></span><div class="u"></div><div class="u"></div><div class="u"></div><div class="u"></div><div class="u"></div><div class="u"></div><div class="u"></div></div>
+<div class="lab">۴ ده‌تایی و ۷ یکی = عدد ۴۷</div>
+<div class="cols"><div>رقم دهگان<b>۴</b></div><div>رقم یکان<b>۷</b></div></div>
+<div class="say">به عددهایی مثل ۴۷ و ۲۳ که دو رقم دارند، می‌گوییم <b>عدد دو رقمی</b>.<br>۴۷ را می‌خوانیم: <b>چهل و هفت</b>.</div>
+<div class="pr"><h3>🎯 حالا تو حل کن</h3>
+<div class="q" data-a="2"><div>۱) ۲ ده‌تایی و ۳ یکی چه عددی است؟</div><div class="opts"><button>۳۲</button><button>۵</button><button>۲۳</button></div><div class="fb"></div></div>
+<div class="q" data-a="0"><div>۲) در عدد ۵۹، رقم دهگان کدام است؟</div><div class="opts"><button>۵</button><button>۹</button><button>۱۴</button></div><div class="fb"></div></div>
+<div class="q" data-a="1"><div>۳) عدد ۸۳ را چطور می‌خوانیم؟</div><div class="opts"><button>هشتاد و سی</button><button>هشتاد و سه</button><button>سی و هشت</button></div><div class="fb"></div></div>
+</div>
+</div>
+
+<div class="step s3">
+<span class="badge">درس ۳</span>
+<h2>حل مسئله: رسم شکل</h2>
+<div class="say">وقتی مسئله سخت است، <b>یک شکل ساده می‌کشیم</b>. به جای کتاب، مربع می‌کشیم!<br><b>علی ۲۳ کتاب دارد. ۱۲ تای آن‌ها داستان است. بقیه علمی است. کتاب علمی چندتاست؟</b></div>
+<div class="blocks" style="gap:3px"><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><div class="sq x"></div><span style="width:8px"></span><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div><div class="sq"></div></div>
+<div class="lab">صورتی‌ها ۱۲ تا داستان‌اند، سفیدها که می‌ماند ۱۱ تا علمی است.</div>
+<div class="say">یا می‌توانیم روی محور اعداد جلو و عقب برویم.</div>
+<div class="pr"><h3>🎯 حالا تو حل کن</h3>
+<div class="q" data-a="2"><div>۱) زهرا ۳۷ عکس دارد. ۲۳ تا رنگی است و بقیه سیاه و سفید. چند عکس سیاه و سفید دارد؟</div><div class="opts"><button>۶۰</button><button>۱۲</button><button>۱۴</button></div><div class="fb"></div></div>
+<div class="q" data-a="1"><div>۲) امروز روز هفتم ماه است. ۸ روز بعد چه روزی از ماه است؟</div><div class="opts"><button>۱۴</button><button>۱۵</button><button>۱۶</button></div><div class="fb"></div></div>
+</div>
+</div>
+
+<div class="step s4">
+<span class="badge">درس ۴</span>
+<h2>جمع و تفریق</h2>
+<div class="say">جمع و تفریق را به چند راه حساب می‌کنیم: انگشت، چوب‌خط، رسم شکل، رنگ کردن مربع‌ها و <b>محور اعداد</b>.<br>جمع یعنی روی محور <b>جلو</b> می‌رویم و تفریق یعنی <b>عقب</b>.</div>
+<div class="nl"><span>۰</span><span>۱</span><span>۲</span><span>۳</span><span>۴</span><span>۵</span><span>۶</span><span>۷</span><span>۸</span><span>۹</span><span>۱۰</span><span>۱۱</span><span>۱۲</span><span>۱۳</span><span>۱۴</span><span>۱۵</span><span>۱۶</span></div>
+<div class="say">مثال: <b>۷ + ۸</b> ← از ۷ شروع کن و ۸ تا جلو برو ← می‌رسی به <b>۱۵</b>.<br><b>۱۵ − ۷</b> ← از ۱۵ شروع کن و ۷ تا عقب بیا ← می‌رسی به <b>۸</b>.</div>
+<div class="say">جمع سه عدد را دو مرحله‌ای حساب می‌کنیم: ۴ + ۶ + ۷ ← اول ۴ + ۶ = ۱۰ ← بعد ۱۰ + ۷ = ۱۷</div>
+<div class="pr"><h3>🎯 حالا تو حل کن</h3>
+<div class="q" data-a="0"><div>۱) ۶ + ۶ = ؟</div><div class="opts"><button>۱۲</button><button>۱۱</button><button>۱۳</button></div><div class="fb"></div></div>
+<div class="q" data-a="2"><div>۲) ۱۴ − ۸ = ؟</div><div class="opts"><button>۷</button><button>۸</button><button>۶</button></div><div class="fb"></div></div>
+<div class="q" data-a="1"><div>۳) ۳ + ۴ + ۵ = ؟</div><div class="opts"><button>۱۰</button><button>۱۲</button><button>۱۴</button></div><div class="fb"></div></div>
+</div>
+</div>
+
+<div class="step s5">
+<span class="badge">درس ۵</span>
+<h2>شمارش چندتا چندتا</h2>
+<div class="say">می‌توانیم به جای یکی‌یکی، <b>۴تا۴تا</b> یا <b>۵تا۵تا</b> بشماریم. هر بار همان عدد را اضافه می‌کنیم.</div>
+<div class="big">۴ ، ۸ ، ۱۲ ، ۱۶ ، ۲۰ ، ۲۴</div>
+<div class="lab">این شمارش ۴تا۴تا است (هر بار ۴ تا بیشتر)</div>
+<div class="say">مثال ساختمان: اگر هر طبقه ۴ چینه داشته باشد، ساختمان ۲ طبقه ۸ چینه و ساختمان ۳ طبقه ۱۲ چینه می‌خواهد.</div>
+<div class="pr"><h3>🎯 حالا تو حل کن</h3>
+<div class="q" data-a="1"><div>۱) شمارش ۵تا۵تا را ادامه بده: ۵ ، ۱۰ ، ۱۵ ، ؟</div><div class="opts"><button>۱۶</button><button>۲۰</button><button>۲۵</button></div><div class="fb"></div></div>
+<div class="q" data-a="2"><div>۲) شمارش ۸تا۸تا: ۸ ، ۱۶ ، ۲۴ ، ؟</div><div class="opts"><button>۳۰</button><button>۲۸</button><button>۳۲</button></div><div class="fb"></div></div>
+<div class="q" data-a="0"><div>۳) هر طبقه ۴ چینه دارد. ساختمان ۵ طبقه چند چینه می‌خواهد؟</div><div class="opts"><button>۲۰</button><button>۱۶</button><button>۲۴</button></div><div class="fb"></div></div>
+</div>
+</div>
+
+<div class="end" id="end"><div style="font-size:44px">🏆🌸👑</div><b>آفرین دختر باهوش!</b><br>فصل ۱ را تمام کردی.</div>
+</div>
+
+<script>
+var score=0,qs=document.querySelectorAll('.q'),total=qs.length;
+function fa(n){return n.toLocaleString('fa-IR')}
+document.getElementById('tot').textContent=fa(total);
+qs.forEach(function(q){
+  var a=+q.getAttribute('data-a'),fb=q.querySelector('.fb'),done=false;
+  q.querySelectorAll('button').forEach(function(b,i){
+    b.addEventListener('click',function(){
+      if(done)return;
+      if(i===a){
+        done=true;b.className='ok';fb.textContent='🌟 آفرین! درست بود';
+        q.querySelectorAll('button').forEach(function(x){x.disabled=true});
+        score++;document.getElementById('sc').textContent=fa(score);
+        if(score===total)document.getElementById('end').className='end show';
+      }else{b.className='no';b.disabled=true;fb.textContent='🤔 دوباره فکر کن و یکی دیگر را امتحان کن'}
+    });
+  });
+});
+</script>
+</body>
+</html>
